@@ -1,0 +1,85 @@
+#:import utils kivy.utils
+
+<HomeScreen>:
+    canvas.before:
+        Color:
+            rgb: utils.get_color_from_hex("#9400d3") #9400d3 #f0e6fa
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        GridLayout:
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#1478a7")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            size_hint: 1, .1
+            pos_hint: {"center_x": .5, "center_y": .96}
+            Label:
+                #pos_hint: {"center_x": .5, "center_y": .9}
+                size_hint: .1, .1
+                text: "Home Page"
+                id: home_title
+                #Put label for the home page
+        Image:
+            source: "images/emuLogo.png"
+            size_hint: .2, .2
+            pos_hint: {"center_x": .5, "center_y": .76}
+            keep_ratio: True
+        GridLayout:
+            rows: 2
+            size_hint: 1, .09
+            pos_hint: {"center_x": .5, "center_y": .5}
+            Label:
+                size_hint: .1, .1
+                text: "CMPE Covid-19 "
+                id: main_label1
+                #Change font size
+            Label:
+                size_hint: .1, .1
+                text: "Tracking Application"
+                id: main_label2
+                #change font size
+        GridLayout:
+            #canvas:
+            #    Color:
+            #        rgb: utils.get_color_from_hex("#9400d3")
+            #    Rectangle:
+            #        size: self.size
+            #        pos: self.pos
+            cols: 2
+            size_hint: 1, .2
+            pos_hint: {"center_x": .5, "center_y": .5}
+            #Image:
+            #    source: "images/corona1.jpg"
+            #    keep_ratio: False
+            #Image:
+            #    source: "images/corona2.jpg"
+            #    keep_ratio: False
+        GridLayout:
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#0b5394")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            size_hint: .2, .1
+            pos_hint: {"center_x": .5, "center_y": .3}
+            Button:
+                text: "Log In"
+                background_color: 1, 1, 1, 0
+                #size_hint: .1, .1
+
+                on_release: app.change_screen("signin_screen", direction = "None")
+
+#Put covid images around th screen
+
+
+    #Button:
+    #    text: "home screen"
+    #    on_release:
+    #        app.change_screen("signin_screen")
